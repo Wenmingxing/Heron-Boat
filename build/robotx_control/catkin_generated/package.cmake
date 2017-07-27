@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "robotx_control")
+set(robotx_control_MAINTAINER "renyelts <renyelts@todo.todo>")
+set(robotx_control_DEPRECATED "")
+set(robotx_control_VERSION "0.0.0")
+set(robotx_control_BUILD_DEPENDS "dynamic_reconfigure" "message_generation" "message_runtime" "nav_msgs" "roscpp" "rospy" "sensor_msgs" "std_msgs" "tf" "geometry_msgs")
+set(robotx_control_RUN_DEPENDS "dynamic_reconfigure" "nav_msgs" "roscpp" "rospy" "sensor_msgs" "std_msgs" "geometry_msgs" "message_generation" "message_runtime" "tf")
+set(robotx_control_BUILDTOOL_DEPENDS "catkin")

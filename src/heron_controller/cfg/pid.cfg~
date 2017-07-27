@@ -1,0 +1,15 @@
+#! /usr/bin/env python
+PACKAGE = "heron_controller"
+
+from dynamic_reconfigure.parameter_generator_catkin import * 
+
+gen = ParameterGenerator()
+
+gen.add("linear_p",double_t,0,"Propotional for linear speed",1.0,0.0,20.0)
+gen.add("linear_i",double_t,0,"Integral for linear speed",0.0,0.0,20.0)
+gen.add("linear_d",double_t,0,"Derivative for linear speed",0.0,0.0,20.0)
+gen.add("angular_p",double_t,0,"Propotional for angular speed",1.0,0.0,20.0)
+gen.add("angular_i",double_t,0,"Integral for angular speed",0.0,0.0,20.0)
+gen.add("angular_d",double_t,0,"Derivative for angular speed",0.0,0.0,20.0)
+
+exit(gen.generate(PACKAGE,"heron_controller","pid"))

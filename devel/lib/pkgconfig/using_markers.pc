@@ -1,0 +1,8 @@
+prefix=/home/lukewen/heron_ws/devel
+
+Name: using_markers
+Description: Description of using_markers
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/lukewen/heron_ws/devel/lib 
+Requires: 

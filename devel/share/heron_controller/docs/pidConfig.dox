@@ -1,0 +1,11 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~linear_p" : \b [double] Propotional for linear speed min: 0.0, default: 1.0, max: 20.0
+- \b "~linear_i" : \b [double] Integral for linear speed min: 0.0, default: 0.0, max: 20.0
+- \b "~linear_d" : \b [double] Derivative for linear speed min: 0.0, default: 0.0, max: 20.0
+- \b "~angular_p" : \b [double] Propotional for angular speed min: 0.0, default: 1.0, max: 20.0
+- \b "~angular_i" : \b [double] Integral for angular speed min: 0.0, default: 0.0, max: 20.0
+- \b "~angular_d" : \b [double] Derivative for angular speed min: 0.0, default: 0.0, max: 20.0
+

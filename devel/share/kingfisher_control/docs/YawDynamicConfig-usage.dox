@@ -1,0 +1,9 @@
+\subsubsection usage Usage
+\verbatim
+<node name="pypid" pkg="kingfisher_control" type="pypid">
+  <param name="Kp" type="double" value="1.0" />
+  <param name="Ki" type="double" value="0.0" />
+  <param name="Kd" type="double" value="0.0" />
+</node>
+\endverbatim
+

@@ -1,0 +1,8 @@
+<launch>
+    
+    <node pkg="robotx_sensor" type="navsat_vel_odom.py" name="navsat_vel_odom" output="screen" >
+        <param name="is_pub_tf" value="false"/>
+    </node>
+
+
+</launch>

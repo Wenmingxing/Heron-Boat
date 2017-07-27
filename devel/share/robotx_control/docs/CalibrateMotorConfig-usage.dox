@@ -1,0 +1,15 @@
+\subsubsection usage Usage
+\verbatim
+<node name="robotx_control" pkg="robotx_control" type="robotx_control">
+  <param name="left_throttle_scale" type="double" value="1.0" />
+  <param name="right_throttle_scale" type="double" value="1.0" />
+  <param name="left_throttle_offset" type="double" value="0.0" />
+  <param name="right_throttle_offset" type="double" value="0.0" />
+  <param name="max_speed" type="double" value="1.3" />
+  <param name="yaw_rate" type="double" value="0.1" />
+  <param name="steering_direction" type="bool" value="True" />
+  <param name="left_throttle_polarity" type="bool" value="True" />
+  <param name="right_throttle_polarity" type="bool" value="True" />
+</node>
+\endverbatim
+

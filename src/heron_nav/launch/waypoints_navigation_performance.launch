@@ -1,0 +1,13 @@
+<launch>
+	<!--include the waypoint navigation node and the markerarray path node-->
+	<arg name="offset" default="0"/>
+	<!--node name="twist_drive" pkg="heron_controller" type="twist_RandL"/-->
+	<node name="waypoint_navigation" pkg="heron_nav" type="simple_navigation_goals">
+		<param name="offset" value="$(arg offset)"/>
+	</node>
+
+	<node name="waypoint_markers" pkg="using_markers" type="waypoint_markers">
+		<param name="offset" value="$(arg offset)"/>
+	</node>
+
+</launch>

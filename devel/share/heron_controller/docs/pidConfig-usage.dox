@@ -1,0 +1,12 @@
+\subsubsection usage Usage
+\verbatim
+<node name="heron_controller" pkg="heron_controller" type="heron_controller">
+  <param name="linear_p" type="double" value="1.0" />
+  <param name="linear_i" type="double" value="0.0" />
+  <param name="linear_d" type="double" value="0.0" />
+  <param name="angular_p" type="double" value="1.0" />
+  <param name="angular_i" type="double" value="0.0" />
+  <param name="angular_d" type="double" value="0.0" />
+</node>
+\endverbatim
+

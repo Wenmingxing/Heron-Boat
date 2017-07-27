@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "robotx_sensor")
+set(robotx_sensor_MAINTAINER "renye989c <renye989c@todo.todo>")
+set(robotx_sensor_DEPRECATED "")
+set(robotx_sensor_VERSION "0.0.0")
+set(robotx_sensor_BUILD_DEPENDS "dynamic_reconfigure" "roscpp" "rospy" "roslib" "serial" "std_msgs" "sensor_msgs" "geometry_msgs" "serial")
+set(robotx_sensor_RUN_DEPENDS "serial" "dynamic_reconfigure" "roscpp" "rospy" "sensor_msgs" "geometry_msgs" "roslib" "std_msgs")
+set(robotx_sensor_BUILDTOOL_DEPENDS "catkin")

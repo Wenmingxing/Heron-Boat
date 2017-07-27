@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "kingfisher_control")
+set(kingfisher_control_MAINTAINER "bsb <bsb@todo.todo>")
+set(kingfisher_control_DEPRECATED "")
+set(kingfisher_control_VERSION "0.0.0")
+set(kingfisher_control_BUILD_DEPENDS "dynamic_reconfigure" "message_generation" "std_msgs")
+set(kingfisher_control_RUN_DEPENDS "dynamic_reconfigure" "message_runtime" "std_msgs")
+set(kingfisher_control_BUILDTOOL_DEPENDS "catkin" "catkin")
