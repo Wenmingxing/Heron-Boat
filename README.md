@@ -21,6 +21,21 @@ testing usage, the heron_nav and kingfisher_control packages will be enough for 
 heron_nav includes all the lunch files which are needed for our testing, the kingfisher_control package would provide 
 us the PID controller for the navigation performance.
 
+For more details about all the subdirectories.
+1)LMS1xx: the lidar scanner for obstacle detection and avoidance
+2)heron: the MEM boat model building through the ROS description
+3)heron_controller: PID controller for the different topics.We can use kingfisher_control to replace it.
+4)heron_nav: This is the main package where all the necessary functions are included, such as localization, navigation and 
+waypoint control. Furthermore, the RVIZ visualization about MEM boat is also fired in heron_nav.
+5)heron_robot: the configuration for the MEM boat.
+6)kingfisher_control: the PID controller for our real life testing(kingfisher_twist_control)
+7)ntu10_heron: Here we include the external IMU sensor for the model
+8)robot_upstart: This is a package where we can set the default function which will be activated through the poweron of the boat.
+9)robotx_control: This is a seperate directory for the localization, since we replace the original robot_pose-ekf with the robot_localization, some configuration files are also included here
+10)robot_sensor: This is a directory about the sensors including gps and IMU
+11)um6:It is the driver for the um6_imu 
+12)using_markers: This is a package which I designed for easily evaluating the performance of the waypoint function.
+
 # How to activate and use these packages for real life test.
 1. Make sure the MEM boat and you workstation PC are connected to the wifi station, where I've set the different static IPs
 for the onboard pc and workstation pc in order to to recoganize each others in the wifi.
