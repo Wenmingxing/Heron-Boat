@@ -39,6 +39,7 @@ ntpdate 192.168.0.103, would force the clock on your workstation PC to be exactl
 3. TO check whether the ros on the defferent PCs can recognize each other, run the command:
 rostopic list, will list all the rostopic available on the ros.
 
+# The main steps for testing
 4. The following steps are about the programs needed to run for the real life test after setup the wifi and power on the MEM boat
   ping 192.168.0.103, to check both of the computers are on the same wifi
   rostopic list, to check the ros can communicate with each other
@@ -54,11 +55,22 @@ rostopic list, will list all the rostopic available on the ros.
     This will activate the PID controller which takes the twist message as input and Drive ad output, more specifically
     from (linear.x,angular.z) to (left,right)
     
-    3) another terminal, rqt_plot
-    This will plot what you want to observe in a figure, for us, here we plot the message about linear.x and angular.z
+    3) Give the control command, run the follwing command in your workstation PC terminal
+    rostopic pub -r 6 cmd_vel geometry_msgs/Twist "[1.0,0,0]" "[0,0,0]"
+    for the message, [1.0,0,0] means the linear.x = 1.0 (in meter), linear.y = linear.z = 0 since we only care about the forward and
+    backward speed.
+    [0,0,0] means the angular.x = angular.y = angular.z = 0 (in radian), in that case we can finish the linear speed PID tuning without 
+    input the angular speed command. After we finish the linear one, then can try to tune the PID controller with the follo-
+    wing command.
+    rostopic pub -r 6 cmd_vel geometry_msgs/Twist "[0,0,0]" "[0,0,0.5]" which will drive the boat in circle rounds.
+    
+    4) another terminal, rqt_plot
+    After you give the speed command, you can observe the feedback information through the rqt_plot window.
+    This will plot what you want to observe in a figure, for us, here we plot the message about 
+    odometry/global/twist/twist/linear.x and odometry/global/twist/twist/angular.z which is the feedback information
     for our performance evaluation of the PID controller.
     
-    4) new terminal, rosrun rqt_reconfigure rqt_reconfigure
+    5) new terminal, rosrun rqt_reconfigure rqt_reconfigure
     This command would fire the PID parameter tuning board, where the p,i,d parameters for the linear and yaw are provided.
     we can tune these parameters then observe the performance in the rqt_plot window.
     Keeping tuning the PID for linear and angular seperately till the performance meets our request.
