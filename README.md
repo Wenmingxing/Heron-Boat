@@ -1,11 +1,12 @@
 # MEM-Boat
 This repo is for the MEM boat project, all the rights are reserved by ERI@N Wind & Marine team.
 
-The following comments are some description of this repo distribution and the precudures to manipulate
+The following comments are some descriptions of this repo distribution and the precudures to manipulate
 the MEM-boat especially useful for the real life testing.
 
 # Operating system and ROS requirement
 OS: Ubuntu 12.04 which is alongside with the MEM boat
+
 ROS: Hydro version
 
 # Copy the repo to you current directory in your ubuntu system
@@ -22,9 +23,10 @@ heron_nav includes all the lunch files which are needed for our testing, the kin
 us the PID controller for the navigation performance.
 
 For more details about all the subdirectories.
-1)LMS1xx: the lidar scanner for obstacle detection and avoidance
 
-2)heron: the MEM boat model building through the ROS description
+1)LMS1xx: the lidar scanner for obstacle detection and avoidance.
+
+2)heron: the MEM boat model building through the ROS description.
 
 3)heron_controller: PID controller for the different topics.We can use kingfisher_control to replace it.
 
@@ -77,7 +79,7 @@ rostopic list, will list all the rostopic available on the ros.
     This will activate the lunch file where all the sensors are activated, the navigation package (move_base) are working
     the gazebo and RVIZ software are fired.
     
-    2) open another terminal, rosrun kingfisher_controller kingfisher_twist_control
+    2) open another terminal, rosrun kingfisher_controller kingfisher_twist_control.py
     This will activate the PID controller which takes the twist message as input and Drive ad output, more specifically
     from (linear.x,angular.z) to (left,right)
     
