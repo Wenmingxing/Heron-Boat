@@ -129,6 +129,7 @@ this command will record all the topics on the MEM boat, and store them in a bag
   Open the data.txt file, and delete the first line of this file.
   5) In you new terminal, python 3d_plot_python.py
   This program will read the data.txt file and plot all the data inside as a 3D figure.
+  6) You can use the kazam Screencaster for taking a video for a specific area.
 
 
 
