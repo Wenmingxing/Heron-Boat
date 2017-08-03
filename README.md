@@ -75,7 +75,6 @@ rostopic list, will list all the rostopic available on the ros.
   rostopic list, to check the ros can communicate with each other
   ntqdate 192.168.0.103, to sychronize the clocks
   
-   
     On you workstation PC:
     
     1) roslaunch heron_nav move_base_heron.launch
@@ -120,22 +119,22 @@ this command will record all the topics on the MEM boat, and store them in a bag
 
 6. Replay the recorded data and plot it in the computer. Before that you need run: roscore in a new terminal, if it does not work, go-into the .bashrc file and comment the last two lines.(export ...)
 
-  1) rosbag play -l record.bag
-  Command will replay all the recorded data in your computer
+    1) rosbag play -l record.bag
+    Command will replay all the recorded data in your computer
   
-  2) rosrun heron_nav spot_depth
-  The spot_depth dunction will subscribe the depth and GPS information and publish a new topic names /spot_depth
+    2) rosrun heron_nav spot_depth
+    The spot_depth dunction will subscribe the depth and GPS information and publish a new topic names /spot_depth
   
-  3) rostopic echo -p /spot_depth > data.txt
-  This command will print all the message inside the /spot_depth topic to a txt file named data.txt
+    3) rostopic echo -p /spot_depth > data.txt
+    This command will print all the message inside the /spot_depth topic to a txt file named data.txt
   
-  4) modify the data.txt file
-  Open the data.txt file, and delete the first line of this file.
+    4) modify the data.txt file
+    Open the data.txt file, and delete the first line of this file.
   
-  5) In you new terminal, python 3d_plot_python.py
-  This program will read the data.txt file and plot all the data inside as a 3D figure.
+    5) In you new terminal, python 3d_plot_python.py
+    This program will read the data.txt file and plot all the data inside as a 3D figure.
   
-  6) You can use the kazam Screencaster for taking a video for a specific area.
+    6) You can use the kazam Screencaster for taking a video for a specific area.
 
 
 
