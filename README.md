@@ -112,5 +112,23 @@ rostopic list, will list all the rostopic available on the ros.
     we can tune these parameters then observe the performance in the rqt_plot window.
     Keeping tuning the PID for linear and angular seperately till the performance meets our request.
 
+5. Record the data during the boat are driving.
+
+rosbag record -O record.bag -a
+
+this command will record all the topics on the MEM boat, and store them in a bag file names record.bag.
+
+6. Replay the recorded data and plot it in the computer. Before that you need run: roscore in a new terminal, if it does not work, go-into the .bashrc file and comment the last two lines.(export ...)
+  1) rosbag play -l record.bag
+  Command will replay all the recorded data in your computer
+  2) rosrun heron_nav spot_depth
+  The spot_depth dunction will subscribe the depth and GPS information and publish a new topic names /spot_depth
+  3) rostopic echo -p /spot_depth > data.txt
+  This command will print all the message inside the /spot_depth topic to a txt file named data.txt
+  4) modify the data.txt file
+  Open the data.txt file, and delete the first line of this file.
+  5) In you new terminal, python 3d_plot_python.py
+  This program will read the data.txt file and plot all the data inside as a 3D figure.
+
 
 
