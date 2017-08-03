@@ -60,8 +60,7 @@ onboard PC: 192.168.0.103
 To make sure they can connect each other, run the command in your workstation PC command line:
 ping 192.168.0.103, wait for a few seconds you can get the information for they message transmission.
 
-2. To make sure you workstation and onboard pc has the same clock in order to transfer the message correctly. Run the command 
-in your workstation.
+2. To make sure you workstation and onboard pc has the same clock in order to transfer the message correctly. Run the      command in your workstation.
 ntpdate -q 192.168.0.103, would provide you the time leg between your workstation pc and the onboard pc, then run 
 ntpdate 192.168.0.103, would force the clock on your workstation PC to be exactly the same with the one on onboart PC.
 
@@ -70,7 +69,8 @@ rostopic list, will list all the rostopic available on the ros.
 
 # The main steps for testing
 
-4. The following steps are about the programs needed to run for the real life test after setup the wifi and power on the MEM boat
+4. The following steps are about the programs needed to run for the real life test after setup the wifi and power on the 
+MEM boat
   ping 192.168.0.103, to check both of the computers are on the same wifi
   rostopic list, to check the ros can communicate with each other
   ntqdate 192.168.0.103, to sychronize the clocks
@@ -79,7 +79,8 @@ rostopic list, will list all the rostopic available on the ros.
     
     1) roslaunch heron_nav move_base_heron.launch
     
-    This will activate the lunch file where all the sensors are activated, the navigation package (move_base) are working
+    This will activate the lunch file where all the sensors are activated, the navigation package (move_base) are 
+    working
     the gazebo and RVIZ software are fired.
     
     2) open another terminal, rosrun kingfisher_controller kingfisher_twist_control.py
@@ -91,11 +92,13 @@ rostopic list, will list all the rostopic available on the ros.
     
     rostopic pub -r 6 cmd_vel geometry_msgs/Twist "[1.0,0,0]" "[0,0,0]"
     
-    for the message, [1.0,0,0] means the linear.x = 1.0 (in meter), linear.y = linear.z = 0 since we only care about the forward and
+    for the message, [1.0,0,0] means the linear.x = 1.0 (in meter), linear.y = linear.z = 0 since we only care about the 
+    forward and
     backward speed.
-    [0,0,0] means the angular.x = angular.y = angular.z = 0 (in radian), in that case we can finish the linear speed PID tuning without 
-    input the angular speed command. After we finish the linear one, then can try to tune the PID controller with the follo-
-    wing command.
+    [0,0,0] means the angular.x = angular.y = angular.z = 0 (in radian), in that case we can finish the linear speed PID  
+    tuning without 
+    input the angular speed command. After we finish the linear one, then can try to tune the PID controller with the 
+    follo-wing command.
     rostopic pub -r 6 cmd_vel geometry_msgs/Twist "[0,0,0]" "[0,0,0.5]" which will drive the boat in circle rounds.
     
     4) another terminal, rqt_plot
@@ -107,15 +110,16 @@ rostopic list, will list all the rostopic available on the ros.
     
     5) new terminal, rosrun rqt_reconfigure rqt_reconfigure
     
-    This command would fire the PID parameter tuning board, where the p,i,d parameters for the linear and yaw are provided.
+    This command would fire the PID parameter tuning board, where the p,i,d parameters for the linear and yaw are 
+    provided.
     we can tune these parameters then observe the performance in the rqt_plot window.
     Keeping tuning the PID for linear and angular seperately till the performance meets our request.
 
 5. Record the data during the boat are driving.
 
-rosbag record -O record.bag -a
+    rosbag record -O record.bag -a
 
-this command will record all the topics on the MEM boat, and store them in a bag file names record.bag.
+    this command will record all the topics on the MEM boat, and store them in a bag file names record.bag.
 
 6. Replay the recorded data and plot it in the computer. Before that you need run: roscore in a new terminal, if it does not work, go-into the .bashrc file and comment the last two lines.(export ...)
 
